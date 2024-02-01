@@ -5,7 +5,7 @@ const StyledTab = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px; /* Decreased the gap to 6px */
+  gap: 6px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
 
