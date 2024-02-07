@@ -29,7 +29,7 @@ const InputField = ({ label, focusLabel, successLabel, errorLabel, state }) => {
   };
 
   return (
-    <StyledInputField layout="vertical">
+    <StyledInputField>
       <Item
         label={label}
         colon={true}
