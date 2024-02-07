@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Heading1 = styled.h1`
   margin: 0;
@@ -30,5 +30,8 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.p`
+  ${({ $small }) => css`
+    font-size: ${$small ? "12px" : "14px"};
+  `}
   margin: 0;
 `;

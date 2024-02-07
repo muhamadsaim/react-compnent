@@ -1,8 +1,8 @@
-import { Menu } from "antd";
+import { StyledMenu } from "./index.styled";
 
 export default function Menuindex() {
   return (
-    <Menu
+    <StyledMenu
       className="menu-bar"
       mode="horizontal"
       items={[

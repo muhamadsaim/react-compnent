@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import { Select } from "../../components/Select";
+import { Text } from "../../components/Typography";
+
+export const MainWrapper = styled.div`
+  display: flex;
+`;
 
 export const Wrapper = styled.div`
   background-color: #f7f7f7;
+  width: 100%;
   position: relative;
 `;
 
 export const Sidebar = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  z-index: 100;
   background-color: white;
-  width: 70px;
+  min-width: 70px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -37,7 +38,7 @@ export const Header = styled.div`
   background-color: white;
   gap: 15x;
   margin: 0;
-  padding-left: 70px;
+  /* padding-left: 70px; */
   border-bottom: 1px solid #e1e1e1;
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 `;
@@ -69,7 +70,7 @@ export const Main = styled.div`
   /* height: 1000px; */
   margin: 0;
   padding: 30px 65px;
-  padding-left: 86px;
+  /* padding-left: 86px; */
   justify-content: space-between;
 `;
 export const FormMain = styled.form`
@@ -104,8 +105,9 @@ export const QuestionContainer = styled.div`
 `;
 export const ImgBlock = styled.div``;
 export const CheckBoxes = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* flex-wrap: wrap; */
   gap: 20px;
 `;
 export const SelectStatus = styled.div`
@@ -115,14 +117,35 @@ export const SelectStatus = styled.div`
 `;
 export const SelectStatusMenu = styled(Select)`
   width: 270px;
-  /* height: 20px; */
+  height: 44px;
   border-color: black;
   .ant-select-selector {
     padding: 20px 11px !important;
   }
   .ant-select-arrow {
-    margin-top: 0;
+    margin-top: -4px;
   }
+`;
+export const CardPortion = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+export const TermsCard = styled.div`
+  height: 267px;
+  width: 320px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+export const ContractCard = styled.div`
+  height: 267px;
+  width: 320px;
+  background-color: white;
+  border-radius: 10px;
 `;
 
 export const ImageForm = styled.div`
@@ -134,4 +157,24 @@ export const ImageForm = styled.div`
   align-items: center;
   gap: 10px;
   padding: 50px;
+  border-radius: 10px;
 `;
+
+export const CardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const PriceContainer = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+`;
+export const StyledPinkPara = styled(Text)`
+  color: #e85b81;
+`;
+export const CardFooter = styled.div``;
