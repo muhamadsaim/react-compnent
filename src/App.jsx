@@ -1,6 +1,6 @@
 import { ConfigProvider } from "antd";
 import "./App.css";
-import { Home } from "./pages/Home";
+import { Dashboard } from "./pages/Dashboard";
 
 const App = () => (
   <ConfigProvider
@@ -11,7 +11,7 @@ const App = () => (
       },
     }}
   >
-    <Home />
+    <Dashboard />
   </ConfigProvider>
 );
 

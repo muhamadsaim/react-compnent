@@ -8,23 +8,15 @@ export default function Menuindex() {
       items={[
         {
           key: "1",
-          label: "Tab One",
+          label: "Properties",
         },
         {
           key: "2",
-          label: "Tab Two",
+          label: "Sub-tenants",
         },
         {
           key: "3",
-          label: "Tab Three",
-        },
-        {
-          key: "4",
-          label: "Tab Four",
-        },
-        {
-          key: "5",
-          label: "Tab Five",
+          label: "Settings",
         },
       ]}
     />
