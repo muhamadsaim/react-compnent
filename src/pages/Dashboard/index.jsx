@@ -1,11 +1,7 @@
 import {
   Header,
-  List,
-  ListItem,
   Main,
   ProjectTitleContainer,
-  Title,
-  TopHeading,
   Wrapper,
   MainWrapper,
   QuestionContainer,
@@ -27,10 +23,21 @@ import {
   CardFooter,
   PriceContainer,
   StyledPinkPara,
+  StyledGrayPara,
+  ContractCardBody,
+  ContractCardContent,
+  ContractCardFooter,
+  StyledGreenPara,
+  Profile,
+  ProfileInfo,
+  ImageContainer,
+  ProfileDetails,
+  ProfileSetting,
+  ProfileImage,
+  ProfileDetailSubHeadings,
+  ProfileDetailSubHeading,
 } from "./index.styled";
-import logo from "../../images/logo.png";
 import image from "../../images/img.png";
-import { Select } from "../../components/Select";
 import Menuindex from "../../components/Menu";
 import HomeIcon from "../../assets/icons/Home.svg?react";
 import ChatIcon from "../../assets/icons/Chat.svg?react";
@@ -39,12 +46,17 @@ import Logoo from "../../assets/icons/Logo.svg?react";
 import MapIcon from "../../assets/icons/Map.svg?react";
 import BarChartIcon from "../../assets/icons/Bar Chart.svg?react";
 import DropIcon from "../../assets/icons/ellipsis.svg?react";
+import BellIcon from "../../assets/icons/Bell.svg?react";
+import ContractCardDp from "../../images/DpCard.svg?react";
+import Img from "../../images/Profile.png";
 
+import SuccessIcon from "../../assets/icons/Success.svg?react";
 import {
   Heading2,
-  Heading4,
+  Heading3,
   Heading5,
   Heading6,
+  Heading4,
   Label,
   Text,
 } from "../../components/Typography";
@@ -76,19 +88,27 @@ export const Dashboard = () => {
 
       <Wrapper>
         <Header>
-          <TopHeading>
-            <img src={logo} />
-            <List>
-              <ListItem>Page One</ListItem>
-              <ListItem>Page Two</ListItem>
-              <ListItem>Page Three</ListItem>
-              <ListItem>|</ListItem>
-              <ListItem>
-                <Select variant="borderless" placeholder="Account" />
-              </ListItem>
-            </List>
-          </TopHeading>
-          <Title>Page Title</Title>
+          <Profile>
+            <ProfileInfo>
+              <ImageContainer>
+                <ProfileImage src={Img} />
+              </ImageContainer>
+              <ProfileDetails>
+                <Heading2>Sarvis and June</Heading2>
+                <ProfileDetailSubHeading>
+                  <ProfileDetailSubHeadings>
+                    <Heading4>8</Heading4>
+                    <StyledGrayPara>Properties</StyledGrayPara>
+                  </ProfileDetailSubHeadings>
+                  <ProfileDetailSubHeadings>
+                    <Heading4>37</Heading4>
+                    <StyledGrayPara>Sub-tenants</StyledGrayPara>
+                  </ProfileDetailSubHeadings>
+                </ProfileDetailSubHeading>
+              </ProfileDetails>{" "}
+            </ProfileInfo>
+            <ProfileSetting></ProfileSetting>
+          </Profile>
           <Menuindex />
         </Header>
         <Main>
@@ -96,7 +116,7 @@ export const Dashboard = () => {
             <ProjectInfo>
               <Label>Name</Label>
               <ProjectTitleContainer>
-                <Heading4>Hayes Valley Studio</Heading4>
+                <Heading2>Hayes Valley Studio</Heading2>
                 <Label>Edit</Label>
               </ProjectTitleContainer>
             </ProjectInfo>
@@ -135,10 +155,32 @@ export const Dashboard = () => {
                   <Heading2>$425</Heading2>
                   <StyledPinkPara>per desk</StyledPinkPara>
                 </PriceContainer>
+                <StyledGrayPara>Minimum Of 6 Months</StyledGrayPara>
               </CardBody>
-              <CardFooter></CardFooter>
+              <CardFooter>
+                <BellIcon />
+                <Text>Monday, June 1</Text>
+              </CardFooter>
             </TermsCard>
-            <ContractCard></ContractCard>
+            <ContractCard>
+              <CardHeader>
+                <Text>Management</Text>
+                <Popover title="Edit">
+                  <DropIcon />
+                </Popover>
+              </CardHeader>
+              <ContractCardBody>
+                <ContractCardDp />
+                <ContractCardContent>
+                  <Heading3>Silvia Guerro</Heading3>
+                  <StyledGrayPara>(415)- 888 - 2332</StyledGrayPara>
+                </ContractCardContent>
+              </ContractCardBody>
+              <ContractCardFooter>
+                <SuccessIcon />
+                <StyledGreenPara>Contract Signed</StyledGreenPara>
+              </ContractCardFooter>
+            </ContractCard>
           </CardPortion>
 
           <ImageForm>

@@ -43,6 +43,35 @@ export const Header = styled.div`
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 `;
 
+export const Profile = styled.div`
+  display: flex;
+`;
+export const ProfileInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`;
+export const ImageContainer = styled.div``;
+export const ProfileImage = styled.img`
+  border-radius: 50%;
+`;
+export const ProfileDetailSubHeading = styled.div`
+  display: flex;
+  gap: 5px;
+`;
+export const ProfileDetailSubHeadings = styled.div`
+  display: flex;
+  gap: 5px;
+`;
+export const ProfileDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+export const ProfileSetting = styled.div`
+  display: flex;
+`;
 export const TopHeading = styled.div`
   display: flex;
   align-items: center;
@@ -139,13 +168,19 @@ export const TermsCard = styled.div`
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  justify-content: space-between;
 `;
 export const ContractCard = styled.div`
   height: 267px;
   width: 320px;
   background-color: white;
   border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
 `;
 
 export const ImageForm = styled.div`
@@ -168,6 +203,7 @@ export const CardHeader = styled.div`
 export const CardBody = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 export const PriceContainer = styled.div`
   display: flex;
@@ -177,4 +213,26 @@ export const PriceContainer = styled.div`
 export const StyledPinkPara = styled(Text)`
   color: #e85b81;
 `;
-export const CardFooter = styled.div``;
+export const StyledGrayPara = styled(Text)`
+  color: #b5b5b5;
+`;
+export const CardFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const ContractCardBody = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+export const ContractCardContent = styled.div``;
+export const ContractCardFooter = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+`;
+export const StyledGreenPara = styled(Text)`
+  color: #007b40;
+`;
