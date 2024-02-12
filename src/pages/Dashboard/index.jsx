@@ -42,6 +42,9 @@ import {
   OccupancyChart,
   UsageChart,
   StyledEllipseIcon,
+  StyledGrayLightPara,
+  ContractCardHeader,
+  Divider,
 } from "./index.styled";
 import Menuindex from "../../components/Menu";
 import HomeIcon from "../../assets/icons/Home.svg?react";
@@ -55,6 +58,7 @@ import BellIcon from "../../assets/icons/Bell.svg?react";
 import ContractCardDp from "../../images/DpCard.svg?react";
 import Img from "../../images/Profile.png";
 import ChairImg from "../../images/chair.svg?react;";
+import PinIcon from "../../assets/icons/mapPin.svg?react";
 
 import SuccessIcon from "../../assets/icons/Success.svg?react";
 import {
@@ -97,6 +101,7 @@ export const Dashboard = () => {
       <Sidebar>
         <IconsContainer>
           <Logoo />
+          <Divider />
           <HomeIcon />
           <ChatIcon />
           <BarChartIcon />
@@ -149,7 +154,7 @@ export const Dashboard = () => {
             </ProjectInfo>
             <CityFieldContainer>
               <Label>Location</Label>
-              <Input placeholder="City Name" required />
+              <Input prefix={<PinIcon />} placeholder="City Name" required />
             </CityFieldContainer>
             <QuestionContainer>
               <Label>Supply</Label>
@@ -190,12 +195,12 @@ export const Dashboard = () => {
               </CardFooter>
             </TermsCard>
             <ContractCard>
-              <CardHeader>
+              <ContractCardHeader>
                 <Text>Management</Text>
                 <Popover title="Edit">
                   <DropIcon />
                 </Popover>
-              </CardHeader>
+              </ContractCardHeader>
               <ContractCardBody>
                 <ContractCardDp />
                 <ContractCardContent>
@@ -224,11 +229,11 @@ export const Dashboard = () => {
             </SizeOfObject>
             <Chart>
               <OccupancyChart>
-                <Text type="small">Occupancy</Text>
+                <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
                 <BarChart />
               </OccupancyChart>
               <UsageChart>
-                <Text>Usage</Text>
+                <StyledGrayLightPara>Usage</StyledGrayLightPara>
               </UsageChart>
             </Chart>
           </ImageForm>

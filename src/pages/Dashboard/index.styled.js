@@ -18,17 +18,23 @@ export const Wrapper = styled.div`
 export const Sidebar = styled.div`
   background-color: white;
   min-width: 70px;
+  max-width: 70px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-  border-right: 1px solid #b5b5b5;
+  border-right: 1px solid #ececec;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 1;
+`;
+export const Divider = styled.div`
+  background: #ececec;
+  height: 1px;
+  width: 100%;
 `;
 export const IconsContainer = styled.div`
   display: flex;
@@ -79,6 +85,7 @@ export const ProfileDetailSubHeading = styled.div`
 export const ProfileDetailSubHeadings = styled.div`
   display: flex;
   gap: 5px;
+  align-items: baseline;
 `;
 export const ProfileDetails = styled.div`
   display: flex;
@@ -197,7 +204,8 @@ export const ContractCard = styled.div`
   width: 320px;
   background-color: white;
   border-radius: 20px;
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -235,15 +243,27 @@ export const StyledPinkPara = styled(Text)`
 export const StyledGrayPara = styled(Text)`
   color: #b5b5b5;
 `;
+export const StyledGrayLightPara = styled(Text)`
+  color: #e1e1e1;
+`;
+
 export const CardFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
+
+export const ContractCardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 30px;
+`;
 export const ContractCardBody = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-inline: 30px;
 `;
 export const ContractCardContent = styled.div``;
 export const ContractCardFooter = styled.div`
@@ -251,6 +271,8 @@ export const ContractCardFooter = styled.div`
   align-items: center;
   padding-top: 10px;
   gap: 10px;
+  border-top: 1px solid #ececec;
+  padding-inline: 30px;
 `;
 export const StyledGreenPara = styled(Text)`
   color: #007b40;
