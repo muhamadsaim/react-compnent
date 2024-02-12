@@ -36,8 +36,13 @@ import {
   ProfileImage,
   ProfileDetailSubHeadings,
   ProfileDetailSubHeading,
+  EditProfileButton,
+  SizeOfObject,
+  Chart,
+  OccupancyChart,
+  UsageChart,
+  StyledEllipseIcon,
 } from "./index.styled";
-import image from "../../images/img.png";
 import Menuindex from "../../components/Menu";
 import HomeIcon from "../../assets/icons/Home.svg?react";
 import ChatIcon from "../../assets/icons/Chat.svg?react";
@@ -49,13 +54,12 @@ import DropIcon from "../../assets/icons/ellipsis.svg?react";
 import BellIcon from "../../assets/icons/Bell.svg?react";
 import ContractCardDp from "../../images/DpCard.svg?react";
 import Img from "../../images/Profile.png";
+import ChairImg from "../../images/chair.svg?react;";
 
 import SuccessIcon from "../../assets/icons/Success.svg?react";
 import {
   Heading2,
   Heading3,
-  Heading5,
-  Heading6,
   Heading4,
   Label,
   Text,
@@ -63,7 +67,8 @@ import {
 import { Input } from "../../components/Input";
 import CheckBox from "../../components/CheckBox";
 import { Button } from "../../components/Button";
-import { Progress, Popover } from "antd";
+import { Popover, Dropdown } from "antd";
+import { BarChart } from "../../components/BarChart";
 
 export const Dashboard = () => {
   const handleSubmit = (e) => {
@@ -71,6 +76,21 @@ export const Dashboard = () => {
 
     console.debug(e);
   };
+
+  const items = [
+    {
+      label: "1st menu item",
+      key: "0",
+    },
+    {
+      label: "2nd menu item",
+      key: "1",
+    },
+    {
+      label: "3rd menu item",
+      key: "2",
+    },
+  ];
 
   return (
     <MainWrapper>
@@ -83,7 +103,9 @@ export const Dashboard = () => {
           <MapIcon />
           <CreditCardIcon />
         </IconsContainer>
-        <ProfileDp></ProfileDp>
+        <ProfileDp>
+          <img src={Img} style={{ width: "50px", borderRadius: "50px" }} />
+        </ProfileDp>
       </Sidebar>
 
       <Wrapper>
@@ -107,7 +129,12 @@ export const Dashboard = () => {
                 </ProfileDetailSubHeading>
               </ProfileDetails>{" "}
             </ProfileInfo>
-            <ProfileSetting></ProfileSetting>
+            <ProfileSetting>
+              <Dropdown menu={{ items }} trigger={["click"]}>
+                <StyledEllipseIcon />
+              </Dropdown>
+              <EditProfileButton type="default">Edit Profile</EditProfileButton>
+            </ProfileSetting>
           </Profile>
           <Menuindex />
         </Header>
@@ -182,12 +209,28 @@ export const Dashboard = () => {
               </ContractCardFooter>
             </ContractCard>
           </CardPortion>
-
           <ImageForm>
-            <img src={image} style={{ width: "90%" }} />
-            <Heading6>Get Started</Heading6>
-            <Heading5>Sign Up Process</Heading5>
-            <Progress percent={50} showInfo={false} size="small" />
+            <img
+              src={ChairImg}
+              style={{
+                width: "100%",
+                borderTopLeftRadius: "20px",
+                borderTopRightRadius: "20px",
+              }}
+            />
+            <SizeOfObject>
+              <StyledGrayPara>Size</StyledGrayPara>
+              <Text>1,350 sqft</Text>
+            </SizeOfObject>
+            <Chart>
+              <OccupancyChart>
+                <Text type="small">Occupancy</Text>
+                <BarChart />
+              </OccupancyChart>
+              <UsageChart>
+                <Text>Usage</Text>
+              </UsageChart>
+            </Chart>
           </ImageForm>
         </Main>
       </Wrapper>

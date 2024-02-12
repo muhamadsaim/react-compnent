@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Select } from "../../components/Select";
 import { Text } from "../../components/Typography";
+import { Button } from "../../components/Button";
+import DropIcon from "../../assets/icons/ellipsis.svg?react";
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -9,16 +11,24 @@ export const MainWrapper = styled.div`
 export const Wrapper = styled.div`
   background-color: #f7f7f7;
   width: 100%;
-  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 export const Sidebar = styled.div`
   background-color: white;
   min-width: 70px;
-  height: 100%;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   padding-top: 20px;
+  border-right: 1px solid #b5b5b5;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
 `;
 export const IconsContainer = styled.div`
   display: flex;
@@ -26,6 +36,10 @@ export const IconsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
+`;
+export const Icon = styled.img`
+  width: 30px;
+  height: 30px;
 `;
 
 export const ProfileDp = styled.div``;
@@ -45,6 +59,8 @@ export const Header = styled.div`
 
 export const Profile = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 export const ProfileInfo = styled.div`
   display: flex;
@@ -71,6 +87,10 @@ export const ProfileDetails = styled.div`
 `;
 export const ProfileSetting = styled.div`
   display: flex;
+  gap: 4px;
+`;
+export const EditProfileButton = styled(Button)`
+  padding-inline: 40px;
 `;
 export const TopHeading = styled.div`
   display: flex;
@@ -101,6 +121,7 @@ export const Main = styled.div`
   padding: 30px 65px;
   /* padding-left: 86px; */
   justify-content: space-between;
+  gap: 30px;
 `;
 export const FormMain = styled.form`
   width: 400px;
@@ -164,7 +185,7 @@ export const TermsCard = styled.div`
   height: 267px;
   width: 320px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -175,7 +196,7 @@ export const ContractCard = styled.div`
   height: 267px;
   width: 320px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -186,13 +207,11 @@ export const ContractCard = styled.div`
 export const ImageForm = styled.div`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  /* width: 300px; */
   background-color: white;
-  justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 50px;
-  border-radius: 10px;
+  border-radius: 20px;
 `;
 
 export const CardHeader = styled.div`
@@ -235,4 +254,34 @@ export const ContractCardFooter = styled.div`
 `;
 export const StyledGreenPara = styled(Text)`
   color: #007b40;
+`;
+export const SizeOfObject = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+  width: 100%;
+  border-bottom: 1px solid #ececec;
+  padding: 20px;
+`;
+
+export const Chart = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 20px;
+`;
+export const OccupancyChart = styled.div`
+  /* width: 100%; */
+  /* display: flex;
+  flex-direction: column; */
+`;
+
+export const UsageChart = styled.div`
+  /* display: flex;
+  flex-direction: column; */
+`;
+export const StyledEllipseIcon = styled(DropIcon)`
+  background-color: #b5b5b5;
+  height: auto;
+  padding: 4px;
+  border-radius: 6px;
 `;
