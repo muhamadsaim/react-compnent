@@ -1,11 +1,13 @@
 import { Column } from "@ant-design/plots";
 import { useContext } from "react";
+import { useRecoilValue } from "recoil";
 
-import { BarChartDataContext } from "../../pages/Dashboard";
+import { fetchDataSelector } from "../../store";
 
 // eslint-disable-next-line react/prop-types
 export const BarChart = ({ color }) => {
-  const data = useContext(BarChartDataContext);
+  // const data = useContext(BarChartDataContext);
+  const data = useRecoilValue(fetchDataSelector);
   const config = {
     data,
     margin: 0,

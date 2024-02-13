@@ -66,7 +66,7 @@ import PurpleEllipse from "../../assets/icons/PurpleEllipse.svg?react";
 import GreenEllipse from "../../assets/icons/GreenEllipse.svg?react";
 
 import SuccessIcon from "../../assets/icons/Success.svg?react";
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import {
   Heading2,
@@ -81,32 +81,32 @@ import { Button } from "../../components/Button";
 import { Tooltip, Dropdown } from "antd";
 import { BarChart } from "../../components/BarChart";
 
-export const BarChartDataContext = createContext();
+// export const BarChartDataContext = createContext();
 
-export const BarChartDataProvider = ({ children }) => {
-  const [barChartData, setBarChartData] = useState([]);
+// export const BarChartDataProvider = ({ children }) => {
+//   const [barChartData, setBarChartData] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        "https://render.alipay.com/p/yuyan/180020010001215413/antd-charts/column-column.json"
-      );
-      setBarChartData(response.data);
-    } catch (error) {
-      console.error("Error fetching bar chart data:", error);
-    }
-  };
+//   const fetchData = async () => {
+//     try {
+//       const response = await axios.get(
+//         "https://render.alipay.com/p/yuyan/180020010001215413/antd-charts/column-column.json"
+//       );
+//       setBarChartData(response.data);
+//     } catch (error) {
+//       console.error("Error fetching bar chart data:", error);
+//     }
+//   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     fetchData();
+//   }, []);
 
-  return (
-    <BarChartDataContext.Provider value={barChartData}>
-      {children}
-    </BarChartDataContext.Provider>
-  );
-};
+//   return (
+//     <BarChartDataContext.Provider value={barChartData}>
+//       {children}
+//     </BarChartDataContext.Provider>
+//   );
+// };
 
 export const Dashboard = () => {
   const handleSubmit = (e) => {
@@ -275,18 +275,16 @@ export const Dashboard = () => {
               <StyledGrayPara>Size</StyledGrayPara>
               <Text>1,350 sqft</Text>
             </SizeOfObject>
-            <BarChartDataProvider>
-              <Chart>
-                <OccupancyChart>
-                  <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
-                  <BarChart color="#5E48E8" />
-                </OccupancyChart>
-                <UsageChart>
-                  <StyledGrayLightPara>Usage</StyledGrayLightPara>
-                  <BarChart color="#E1E1E1" />
-                </UsageChart>
-              </Chart>
-            </BarChartDataProvider>
+            <Chart>
+              <OccupancyChart>
+                <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
+                <BarChart color="#5E48E8" />
+              </OccupancyChart>
+              <UsageChart>
+                <StyledGrayLightPara>Usage</StyledGrayLightPara>
+                <BarChart color="#E1E1E1" />
+              </UsageChart>
+            </Chart>
           </ImageForm>
         </Main>
       </Wrapper>
