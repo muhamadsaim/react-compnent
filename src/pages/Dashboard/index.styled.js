@@ -25,7 +25,6 @@ export const Sidebar = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
   padding-bottom: 20px;
   border-right: 1px solid #ececec;
   position: sticky;
@@ -34,16 +33,19 @@ export const Sidebar = styled.div`
   z-index: 1;
 `;
 export const Divider = styled.div`
-  background: #ececec;
-  height: 1px;
+  border-bottom: 1px solid #ececec;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
 `;
 export const IconsContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
 `;
 export const Icon = styled.img`
   width: 30px;
@@ -195,7 +197,7 @@ export const SelectStatus = styled.div`
   gap: 5px;
 `;
 export const SelectStatusMenu = styled(Select)`
-  width: 270px;
+  width: 100%;
   height: 44px;
   border-color: black;
   .ant-select-selector {
@@ -211,7 +213,7 @@ export const CardPortion = styled.div`
   gap: 15px;
 `;
 export const TermsCard = styled.div`
-  height: 267px;
+  height: auto;
   width: 320px;
   background-color: white;
   border-radius: 16px;
@@ -219,18 +221,16 @@ export const TermsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  justify-content: space-between;
 `;
 export const ContractCard = styled.div`
-  height: 267px;
+  height: auto;
   width: 320px;
   background-color: white;
   border-radius: 16px;
-  padding-block: 30px;
+  padding-block: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  justify-content: space-between;
 `;
 
 export const ImageForm = styled.div`
@@ -241,7 +241,7 @@ export const ImageForm = styled.div`
   align-items: center;
   gap: 10px;
   border-radius: 16px;
-  justify-content: space-between;
+  height: fit-content;
 `;
 
 export const CardHeader = styled.div`
@@ -291,10 +291,9 @@ export const ContractCardContent = styled.div``;
 export const ContractCardFooter = styled.div`
   display: flex;
   align-items: center;
-  padding-top: 10px;
   gap: 10px;
   border-top: 1px solid #ececec;
-  padding-inline: 30px;
+  padding: 20px 20px 0 20px;
 `;
 export const StyledGreenPara = styled(Text)`
   color: #007b40;
@@ -302,7 +301,8 @@ export const StyledGreenPara = styled(Text)`
 export const SizeOfObject = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 20px 20px 20px;
+  align-items: center;
+  padding: 20px;
   width: 100%;
   border-bottom: 1px solid #ececec;
 `;
@@ -312,6 +312,7 @@ export const Chart = styled.div`
   width: 100%;
   padding-inline: 20px;
   justify-content: space-between;
+  margin-bottom: -4px;
 `;
 export const OccupancyChart = styled.div`
   /* width: 100%; */
@@ -327,6 +328,7 @@ export const StyledEllipseIcon = styled(DropIcon)`
   background-color: #b5b5b5;
   height: auto;
   padding: 4px;
+  width: auto;
   border-radius: 6px;
 `;
 
@@ -336,4 +338,5 @@ export const StyledPinIcon = styled(PinIcon)`
   width: 30px;
   height: 30px;
   padding: 5px;
+  margin-left: 3px;
 `;

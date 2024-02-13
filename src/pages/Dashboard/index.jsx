@@ -75,7 +75,7 @@ import {
 import { Input } from "../../components/Input";
 import CheckBox from "../../components/CheckBox";
 import { Button } from "../../components/Button";
-import { Popover, Dropdown } from "antd";
+import { Tooltip, Dropdown } from "antd";
 import { BarChart } from "../../components/BarChart";
 
 export const Dashboard = () => {
@@ -165,8 +165,9 @@ export const Dashboard = () => {
     <MainWrapper>
       <Sidebar>
         <IconsContainer>
-          <Logoo />
-          <Divider />
+          <Divider>
+            <Logoo />
+          </Divider>
           <HomeIcon />
           <ChatIcon />
           <BarChartIcon />
@@ -256,13 +257,13 @@ export const Dashboard = () => {
             <TermsCard>
               <CardHeader>
                 <Text>Sublease Terms</Text>
-                <Popover title="Edit">
+                <Tooltip title="Edit">
                   <DropIcon />
-                </Popover>
+                </Tooltip>
               </CardHeader>
               <CardBody>
                 <PriceContainer>
-                  <Heading2>$425</Heading2>
+                  <Heading2 style={{ fontSize: "38px;" }}>$425</Heading2>
                   <StyledPinkPara>per desk</StyledPinkPara>
                 </PriceContainer>
                 <StyledGrayPara>Minimum Of 6 Months</StyledGrayPara>
@@ -275,9 +276,9 @@ export const Dashboard = () => {
             <ContractCard>
               <ContractCardHeader>
                 <Text>Management</Text>
-                <Popover title="Edit">
+                <Tooltip title="Edit">
                   <DropIcon />
-                </Popover>
+                </Tooltip>
               </ContractCardHeader>
               <ContractCardBody>
                 <ContractCardDp />
