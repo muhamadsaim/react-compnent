@@ -241,7 +241,7 @@ export const ImageForm = styled.div`
   /* width: 300px; */
   background-color: white;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
   border-radius: 16px;
   height: fit-content;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
@@ -314,6 +314,7 @@ export const Chart = styled.div`
   display: flex;
   width: 100%;
   padding-inline: 20px;
+  padding-top: 10px;
   justify-content: space-between;
   margin-bottom: -4px;
 `;
