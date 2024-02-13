@@ -221,6 +221,7 @@ export const TermsCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
 `;
 export const ContractCard = styled.div`
   height: auto;
