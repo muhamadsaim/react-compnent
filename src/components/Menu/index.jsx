@@ -5,6 +5,7 @@ export default function Menuindex() {
     <StyledMenu
       className="menu-bar"
       mode="horizontal"
+      defaultSelectedKeys={"1"}
       items={[
         {
           key: "1",
