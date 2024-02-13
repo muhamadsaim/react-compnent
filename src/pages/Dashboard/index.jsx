@@ -45,6 +45,9 @@ import {
   StyledGrayLightPara,
   ContractCardHeader,
   Divider,
+  EllipseContainer,
+  GreenEllipseContainer,
+  StyledPinIcon,
 } from "./index.styled";
 import Menuindex from "../../components/Menu";
 import HomeIcon from "../../assets/icons/Home.svg?react";
@@ -58,7 +61,8 @@ import BellIcon from "../../assets/icons/Bell.svg?react";
 import ContractCardDp from "../../images/DpCard.svg?react";
 import Img from "../../images/Profile.png";
 import ChairImg from "../../images/chair.svg?react;";
-import PinIcon from "../../assets/icons/mapPin.svg?react";
+import PurpleEllipse from "../../assets/icons/PurpleEllipse.svg?react";
+import GreenEllipse from "../../assets/icons/GreenEllipse.svg?react";
 
 import SuccessIcon from "../../assets/icons/Success.svg?react";
 import {
@@ -96,6 +100,67 @@ export const Dashboard = () => {
     },
   ];
 
+  const chart1Data = [
+    {
+      type: "家具家电",
+      sales: 22,
+    },
+    {
+      type: "粮油副食",
+      sales: 52,
+    },
+    {
+      type: "生鲜水果",
+      sales: 43,
+    },
+    {
+      type: "美容洗护",
+      sales: 32,
+    },
+    {
+      type: "母婴用品",
+      sales: 48,
+    },
+    {
+      type: "进口食品",
+      sales: 54,
+    },
+    {
+      type: "食品饮料",
+      sales: 38,
+    },
+  ];
+  const chart2Data = [
+    {
+      type: "家具家电",
+      sales: 22,
+    },
+    {
+      type: "粮油副食",
+      sales: 52,
+    },
+    {
+      type: "生鲜水果",
+      sales: 33,
+    },
+    {
+      type: "美容洗护",
+      sales: 145,
+    },
+    {
+      type: "母婴用品",
+      sales: 76,
+    },
+    {
+      type: "进口食品",
+      sales: 38,
+    },
+    {
+      type: "食品饮料",
+      sales: 87,
+    },
+  ];
+
   return (
     <MainWrapper>
       <Sidebar>
@@ -109,7 +174,13 @@ export const Dashboard = () => {
           <CreditCardIcon />
         </IconsContainer>
         <ProfileDp>
-          <img src={Img} style={{ width: "50px", borderRadius: "50px" }} />
+          <img
+            src={Img}
+            style={{ width: "50px", borderRadius: "50px", objectFit: "cover" }}
+          />
+          <GreenEllipseContainer>
+            <GreenEllipse />
+          </GreenEllipseContainer>
         </ProfileDp>
       </Sidebar>
 
@@ -119,6 +190,9 @@ export const Dashboard = () => {
             <ProfileInfo>
               <ImageContainer>
                 <ProfileImage src={Img} />
+                <EllipseContainer>
+                  <PurpleEllipse />
+                </EllipseContainer>
               </ImageContainer>
               <ProfileDetails>
                 <Heading2>Sarvis and June</Heading2>
@@ -154,7 +228,11 @@ export const Dashboard = () => {
             </ProjectInfo>
             <CityFieldContainer>
               <Label>Location</Label>
-              <Input prefix={<PinIcon />} placeholder="City Name" required />
+              <Input
+                prefix={<StyledPinIcon />}
+                placeholder="City Name"
+                required
+              />
             </CityFieldContainer>
             <QuestionContainer>
               <Label>Supply</Label>
@@ -219,8 +297,8 @@ export const Dashboard = () => {
               src={ChairImg}
               style={{
                 width: "100%",
-                borderTopLeftRadius: "20px",
-                borderTopRightRadius: "20px",
+                borderTopLeftRadius: "16px",
+                borderTopRightRadius: "16px",
               }}
             />
             <SizeOfObject>
@@ -230,10 +308,11 @@ export const Dashboard = () => {
             <Chart>
               <OccupancyChart>
                 <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
-                <BarChart />
+                <BarChart data={chart1Data} color="#5E48E8" />
               </OccupancyChart>
               <UsageChart>
                 <StyledGrayLightPara>Usage</StyledGrayLightPara>
+                <BarChart data={chart2Data} color="#E1E1E1" />
               </UsageChart>
             </Chart>
           </ImageForm>

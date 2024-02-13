@@ -3,6 +3,7 @@ import { Select } from "../../components/Select";
 import { Text } from "../../components/Typography";
 import { Button } from "../../components/Button";
 import DropIcon from "../../assets/icons/ellipsis.svg?react";
+import PinIcon from "../../assets/icons/mapPin.svg?react";
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ export const Sidebar = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
+  padding-bottom: 20px;
   border-right: 1px solid #ececec;
   position: sticky;
   top: 0;
@@ -41,14 +43,22 @@ export const IconsContainer = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 35px;
 `;
 export const Icon = styled.img`
   width: 30px;
   height: 30px;
 `;
 
-export const ProfileDp = styled.div``;
+export const ProfileDp = styled.div`
+  position: relative;
+`;
+
+export const GreenEllipseContainer = styled.div`
+  position: absolute;
+  right: -5px;
+  bottom: 5px;
+`;
 
 export const Header = styled.div`
   width: 100%;
@@ -67,6 +77,7 @@ export const Profile = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 `;
 export const ProfileInfo = styled.div`
   display: flex;
@@ -74,9 +85,20 @@ export const ProfileInfo = styled.div`
   align-items: center;
   gap: 20px;
 `;
-export const ImageContainer = styled.div``;
+export const ImageContainer = styled.div`
+  position: relative;
+`;
+
+export const EllipseContainer = styled.div`
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+`;
 export const ProfileImage = styled.img`
   border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 `;
 export const ProfileDetailSubHeading = styled.div`
   display: flex;
@@ -192,7 +214,7 @@ export const TermsCard = styled.div`
   height: 267px;
   width: 320px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -203,9 +225,8 @@ export const ContractCard = styled.div`
   height: 267px;
   width: 320px;
   background-color: white;
-  border-radius: 20px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  border-radius: 16px;
+  padding-block: 30px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -219,7 +240,8 @@ export const ImageForm = styled.div`
   background-color: white;
   align-items: center;
   gap: 10px;
-  border-radius: 20px;
+  border-radius: 16px;
+  justify-content: space-between;
 `;
 
 export const CardHeader = styled.div`
@@ -280,16 +302,16 @@ export const StyledGreenPara = styled(Text)`
 export const SizeOfObject = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-inline: 20px;
+  padding: 0 20px 20px 20px;
   width: 100%;
   border-bottom: 1px solid #ececec;
-  padding: 20px;
 `;
 
 export const Chart = styled.div`
   display: flex;
   width: 100%;
-  padding: 20px;
+  padding-inline: 20px;
+  justify-content: space-between;
 `;
 export const OccupancyChart = styled.div`
   /* width: 100%; */
@@ -306,4 +328,12 @@ export const StyledEllipseIcon = styled(DropIcon)`
   height: auto;
   padding: 4px;
   border-radius: 6px;
+`;
+
+export const StyledPinIcon = styled(PinIcon)`
+  background: #8ce0f3;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
 `;
