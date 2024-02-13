@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Header,
   Main,
@@ -65,6 +66,8 @@ import PurpleEllipse from "../../assets/icons/PurpleEllipse.svg?react";
 import GreenEllipse from "../../assets/icons/GreenEllipse.svg?react";
 
 import SuccessIcon from "../../assets/icons/Success.svg?react";
+import { createContext, useState, useEffect, useContext } from "react";
+import axios from "axios";
 import {
   Heading2,
   Heading3,
@@ -77,6 +80,33 @@ import CheckBox from "../../components/CheckBox";
 import { Button } from "../../components/Button";
 import { Tooltip, Dropdown } from "antd";
 import { BarChart } from "../../components/BarChart";
+
+export const BarChartDataContext = createContext();
+
+export const BarChartDataProvider = ({ children }) => {
+  const [barChartData, setBarChartData] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://render.alipay.com/p/yuyan/180020010001215413/antd-charts/column-column.json"
+      );
+      setBarChartData(response.data);
+    } catch (error) {
+      console.error("Error fetching bar chart data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <BarChartDataContext.Provider value={barChartData}>
+      {children}
+    </BarChartDataContext.Provider>
+  );
+};
 
 export const Dashboard = () => {
   const handleSubmit = (e) => {
@@ -97,67 +127,6 @@ export const Dashboard = () => {
     {
       label: "3rd menu item",
       key: "2",
-    },
-  ];
-
-  const chart1Data = [
-    {
-      type: "家具家电",
-      sales: 22,
-    },
-    {
-      type: "粮油副食",
-      sales: 52,
-    },
-    {
-      type: "生鲜水果",
-      sales: 43,
-    },
-    {
-      type: "美容洗护",
-      sales: 32,
-    },
-    {
-      type: "母婴用品",
-      sales: 48,
-    },
-    {
-      type: "进口食品",
-      sales: 54,
-    },
-    {
-      type: "食品饮料",
-      sales: 38,
-    },
-  ];
-  const chart2Data = [
-    {
-      type: "家具家电",
-      sales: 22,
-    },
-    {
-      type: "粮油副食",
-      sales: 52,
-    },
-    {
-      type: "生鲜水果",
-      sales: 33,
-    },
-    {
-      type: "美容洗护",
-      sales: 145,
-    },
-    {
-      type: "母婴用品",
-      sales: 76,
-    },
-    {
-      type: "进口食品",
-      sales: 38,
-    },
-    {
-      type: "食品饮料",
-      sales: 87,
     },
   ];
 
@@ -263,7 +232,7 @@ export const Dashboard = () => {
               </CardHeader>
               <CardBody>
                 <PriceContainer>
-                  <Heading2 style={{ fontSize: "38px;" }}>$425</Heading2>
+                  <Heading2 style={{ fontSize: "38px" }}>$425</Heading2>
                   <StyledPinkPara>per desk</StyledPinkPara>
                 </PriceContainer>
                 <StyledGrayPara>Minimum Of 6 Months</StyledGrayPara>
@@ -306,16 +275,18 @@ export const Dashboard = () => {
               <StyledGrayPara>Size</StyledGrayPara>
               <Text>1,350 sqft</Text>
             </SizeOfObject>
-            <Chart>
-              <OccupancyChart>
-                <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
-                <BarChart data={chart1Data} color="#5E48E8" />
-              </OccupancyChart>
-              <UsageChart>
-                <StyledGrayLightPara>Usage</StyledGrayLightPara>
-                <BarChart data={chart2Data} color="#E1E1E1" />
-              </UsageChart>
-            </Chart>
+            <BarChartDataProvider>
+              <Chart>
+                <OccupancyChart>
+                  <StyledGrayLightPara>Occupancy</StyledGrayLightPara>
+                  <BarChart color="#5E48E8" />
+                </OccupancyChart>
+                <UsageChart>
+                  <StyledGrayLightPara>Usage</StyledGrayLightPara>
+                  <BarChart color="#E1E1E1" />
+                </UsageChart>
+              </Chart>
+            </BarChartDataProvider>
           </ImageForm>
         </Main>
       </Wrapper>

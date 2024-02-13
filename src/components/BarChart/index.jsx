@@ -1,15 +1,19 @@
 import { Column } from "@ant-design/plots";
+import { useContext } from "react";
+
+import { BarChartDataContext } from "../../pages/Dashboard";
 
 // eslint-disable-next-line react/prop-types
-export const BarChart = ({ data, color }) => {
+export const BarChart = ({ color }) => {
+  const data = useContext(BarChartDataContext);
   const config = {
     data,
     margin: 0,
     padding: 0,
     width: 125,
     height: 100,
-    xField: "type",
-    yField: "sales",
+    xField: "letter",
+    yField: "frequency",
     label: false,
     colorField: color,
     sizeField: 6,
